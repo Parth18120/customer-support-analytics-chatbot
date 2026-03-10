@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Analytics Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Customer Support Analytics Chatbot</h1>
+            <p class="subtitle">Ask about orders, refunds, shipping, account help, or support.</p>
+
+            <div id="chat-box" class="chat-box"></div>
+
+            <form id="chat-form">
+                <input id="user_message" type="text" name="user_message" placeholder="Type your message..." autocomplete="off" />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('chat-form');
+        const chatBox = document.getElementById('chat-box');
+        const input = document.getElementById('user_message');
+
+        function addMessage(sender, text, meta = '') {
+            const msg = document.createElement('div');
+            msg.className = `message ${sender}`;
+            msg.innerHTML = `<strong>${sender === 'user' ? 'You' : 'Bot'}:</strong> ${text}${meta ? `<div class="meta">${meta}</div>` : ''}`;
+            chatBox.appendChild(msg);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage('user', message);
+            input.value = '';
+
+            const formData = new FormData();
+            formData.append('user_message', message);
+
+            const response = await fetch('/get_response', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+            addMessage('bot', data.response, `Intent: ${data.intent} | Confidence: ${data.confidence}`);
+        });
+    </script>
+</body>
+</html>

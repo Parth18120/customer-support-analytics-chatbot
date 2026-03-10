@@ -1,0 +1,34 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening"],
+      "responses": ["Hello! How can I help you today?", "Hi there! What can I help you with?"]
+    },
+    {
+      "tag": "hours",
+      "patterns": ["what are your hours", "when are you open", "opening hours", "store hours"],
+      "responses": ["Our support team is available Monday to Friday, 9 AM to 6 PM."]
+    },
+    {
+      "tag": "shipping",
+      "patterns": ["where is my order", "shipping status", "track my package", "delivery update"],
+      "responses": ["You can track your order from the Orders page in your account or with the shipping link sent by email."]
+    },
+    {
+      "tag": "refund",
+      "patterns": ["refund policy", "can I get a refund", "return my order", "how do refunds work"],
+      "responses": ["Refunds are processed to the original payment method within 5 to 7 business days after approval."]
+    },
+    {
+      "tag": "account_help",
+      "patterns": ["reset password", "cannot log in", "account problem", "forgot my password"],
+      "responses": ["You can reset your password from the login page by selecting 'Forgot password'."]
+    },
+    {
+      "tag": "contact_support",
+      "patterns": ["talk to an agent", "human support", "contact support", "customer service"],
+      "responses": ["You can contact support at support@example.com or request a callback in your account portal."]
+    }
+  ]
+}
