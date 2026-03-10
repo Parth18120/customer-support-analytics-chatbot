@@ -58,7 +58,7 @@ chatbot_project/
 
 ## Dataset Description
 
-This project includes a synthetically generated dataset of **10,000 customer support tickets** (`data/customer_support_10k.csv`) used for analytics, model training experimentation, and dashboard visualisation.
+This project includes a synthetically generated dataset of **10,000 customer support tickets** (`data/sample_chatbot_logs.csv`) used for analytics, model training experimentation, and dashboard visualisation.
 
 The dataset simulates realistic customer support activity across two years (2023–2024) and covers a wide range of scenarios including billing issues, technical problems, shipping queries, and more.
 
