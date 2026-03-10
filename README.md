@@ -1,114 +1,96 @@
-# Customer Support Analytics Chatbot
+Customer Support Analytics Chatbot
+Overview
 
-A portfolio-ready Flask application that combines **FAQ automation** with **conversation analytics**. It classifies user intent, responds with high-confidence answers, logs every interaction, and generates simple analytics on conversation quality.
+This project is a simple NLP chatbot built using Python and Flask. The main goal was to experiment with natural language processing and see how a chatbot can help answer common customer questions automatically.
 
-## Why this project matters
+The chatbot uses a machine learning model to classify user questions into different intents and respond with the appropriate answer. I also added logging and analytics so interactions can be analyzed later to understand common questions and improve responses.
 
-This project is designed to show business value, not just code:
+This project helped me practice working with text data, machine learning models, and building a small web application.
 
-- **Automates customer support FAQs** to reduce repetitive manual work.
-- **Tracks chatbot usage and fallback rate** so teams can improve content quality.
-- **Uses confidence scoring** to avoid incorrect answers and escalate unclear queries.
-- **Creates analytics-ready logs** that can be used for reporting and service improvement.
+Features
 
-## Business use case
+NLP based intent classification
 
-A support team receives repetitive questions about orders, refunds, hours, shipping, and account help. This chatbot answers common questions instantly and logs each interaction. The logs can be analyzed to identify:
+Confidence scoring for predictions
 
-- top customer intents
-- unresolved questions
-- fallback rate
-- response confidence trends
-- content gaps for FAQ updates
+Fallback response when confidence is low
 
-## Features
+Simple web interface using Flask
 
-- Flask web app with a clean chat UI
-- Intent classification using `CountVectorizer + MultinomialNB`
-- Confidence threshold with fallback handling
-- CSV-based interaction logging
-- Analytics summary script for conversation quality monitoring
-- Unit tests for core prediction behavior
-- Modular project structure
+Logging of user interactions
 
-## Project structure
+Basic analytics on chatbot conversations
 
-```text
-customer-support-analytics-chatbot/
+Technologies Used
+
+Python
+
+Flask
+
+Scikit-learn
+
+NLTK
+
+HTML / CSS
+
+JSON for training data
+
+How It Works
+
+User enters a question in the chatbot interface.
+
+The text is cleaned and converted into features using CountVectorizer.
+
+A Multinomial Naive Bayes model predicts the intent of the question.
+
+If the confidence is high enough, the chatbot returns a response.
+
+If confidence is low, a fallback message is shown.
+
+The interaction is logged so it can be analyzed later.
+
+Project Structure
+chatbot_project/
+│
 ├── app.py
+├── model.py
+├── intents.json
+├── analytics.py
 ├── requirements.txt
-├── .gitignore
 ├── README.md
-├── data/
-│   ├── intents.json
-│   └── chat_logs.csv
-├── chatbot/
-│   ├── __init__.py
-│   ├── model.py
-│   ├── preprocessing.py
-│   ├── logging_utils.py
-│   └── analytics.py
+│
 ├── templates/
 │   └── index.html
-├── static/
-│   └── style.css
+│
 └── tests/
     └── test_model.py
-```
+Example Use Case
 
-## Skills demonstrated
+This chatbot could be used for:
 
-- Python
-- Flask
-- NLP preprocessing
-- Scikit-learn classification
-- Data logging and monitoring
-- Basic product analytics
-- Error handling and modular design
-- README / documentation quality
+answering common FAQ questions
 
-## Setup
+customer support automation
 
-```bash
-git clone <your-repo-url>
+internal helpdesk assistants
+
+It can also be extended with more training data or connected to external APIs.
+
+Installation
+
+Clone the repository
+
+git clone https://github.com/yourusername/customer-support-analytics-chatbot.git
 cd customer-support-analytics-chatbot
-python -m venv .venv
-source .venv/bin/activate   # Mac/Linux
-.venv\Scripts\activate      # Windows
+
+Install dependencies
+
 pip install -r requirements.txt
+
+Run the application
+
 python app.py
-```
 
-Open `http://127.0.0.1:5000` in your browser.
+Open in browser
 
-## Run analytics summary
-
-```bash
-python -m chatbot.analytics
-```
-
-This generates:
-- total conversations
-- top intents
-- fallback rate
-- average confidence
-
-## Run tests
-
-```bash
-pytest -q
-```
-
-## Example resume bullets
-
-- Built a Flask-based customer support chatbot using Python and scikit-learn to automate FAQ handling and improve response consistency.
-- Added confidence scoring, fallback handling, and interaction logging to improve answer quality and enable chatbot performance analysis.
-- Designed an analytics workflow to monitor top intents, fallback rate, and response confidence, turning chatbot logs into actionable service insights.
-
-## Suggested next upgrades
-
-- Add a Power BI dashboard connected to the chatbot log file
-- Add sentiment detection for user feedback
-- Replace bag-of-words model with sentence embeddings
-- Deploy on Render or Azure App Service
-- Add admin page for unanswered questions
+http://localhost:5000
