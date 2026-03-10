@@ -1,4 +1,8 @@
 # Customer Support Analytics Chatbot
+## Business Problem
+
+Customer support teams receive many repetitive questions from users.
+This project demonstrates how a machine learning based chatbot can help automate responses to common questions and reduce manual support workload.
 
 ## Overview
 This project is a simple NLP chatbot built using **Python** and **Flask**.  
@@ -9,8 +13,6 @@ User interactions are logged so they can be analyzed later to understand common 
 
 This project helped me practice working with **text data, machine learning models, and building a small web application**.
 
----
-
 ## Features
 - NLP-based intent classification
 - Confidence scoring for predictions
@@ -18,8 +20,6 @@ This project helped me practice working with **text data, machine learning model
 - Simple web interface using Flask
 - Logging of user interactions
 - Basic analytics on chatbot conversations
-
----
 
 ## Technologies Used
 - Python
@@ -29,8 +29,6 @@ This project helped me practice working with **text data, machine learning model
 - HTML / CSS
 - JSON for training data
 
----
-
 ## How It Works
 1. The user enters a question in the chatbot interface.
 2. The text is cleaned and converted into features using **CountVectorizer**.
@@ -38,8 +36,6 @@ This project helped me practice working with **text data, machine learning model
 4. If the prediction confidence is high enough, the chatbot returns the appropriate response.
 5. If confidence is low, a fallback message is shown.
 6. The interaction is logged so it can be analyzed later.
-
----
 
 ## Project Structure
 
@@ -60,8 +56,6 @@ chatbot_project/
     └── test_model.py
 ```
 
----
-
 ## Example Use Case
 This chatbot could be used for:
 
@@ -71,14 +65,12 @@ This chatbot could be used for:
 
 It can also be extended with more training data or connected to external APIs.
 
----
-
 ## Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/customer-support-analytics-chatbot.git
+git clone https://github.com/Parth18120/customer-support-analytics-chatbot.git
 cd customer-support-analytics-chatbot
 ```
 
@@ -100,8 +92,6 @@ Open in browser
 http://localhost:5000
 ```
 
----
-
 ## Future Improvements
 Some things I would like to improve in the future:
 
@@ -109,8 +99,6 @@ Some things I would like to improve in the future:
 - Improve intent classification using more advanced NLP models
 - Store conversations in a database
 - Build a dashboard to visualize chatbot analytics
-
----
 
 ## What I Learned
 Working on this project helped me understand:
